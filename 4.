@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <ctype.h> // for toupper() function
+
+int main() {
+    char string[100];
+    int vowelCount = 0;
+
+    printf("Enter a string: ");
+    fgets(string, sizeof(string), stdin); // Read input string from user
+
+    for (int i = 0; string[i] != '\0'; i++) { // Loop through each character in the string
+        char ch = toupper(string[i]); // Convert character to uppercase for case-insensitive comparison
+        if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') { // Check if character is a vowel
+            vowelCount++; // Increment vowel count
+        }
+    }
+
+    printf("Number of vowels in the string: %d\n", vowelCount); // Display vowel count
+
+    return 0;
+}
