@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int amount, notes[8] = {0}, denominations[8] = {500, 100, 50, 20, 10, 5, 2, 1};
+    printf("Enter the amount: ");
+    scanf("%d", &amount);
+    for (int i = 0; i < 8; i++) {
+        notes[i] = amount / denominations[i];
+        amount %= denominations[i];
+    }
+    printf("Total number of notes:\n");
+    for (int i = 0; i < 8; i++) {
+        printf("%d: %d\n", denominations[i], notes[i]);
+    }
+    return 0;
+}
+output:Enter the amount: 575
+Total number of notes:
+500: 1
+100: 0
+50: 1
+20: 1
+10: 0
+5: 1
+2: 0
+1: 0
