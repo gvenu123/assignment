@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int num, reversed = 0, remainder;
+    printf("Input number: ");
+    scanf("%d", &num);
+    
+    for (; num != 0; num /= 10) {
+        remainder = num % 10;
+        reversed = reversed * 10 + remainder;
+    }
+    
+    printf("Reverse of %d = %d\n", num, reversed);
+    return 0;
+}
+output:Input number: 12345
+Reverse of 12345 = 54321
